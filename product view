@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        /* Center the card vertically and horizontally */
+        body, html {
+             background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTM2OTgxMy1pbWFnZS1rd3Z4eHA5MS5qcGc.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Styling for the product detail card */
+        .card {
+            width: 22rem;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card-text {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Button style */
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="product-detail">
+            <!-- Product details will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { name: "Lovely", description: "This is a description for product 1.", price: 29.99, imageUrl: "https://th.bing.com/th/id/OIP.zWJOH1FRuumDEaSoY1kTqwHaFX?w=254&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { name: "Product 2", description: "This is a description for product 2.", price: 49.99, imageUrl: "https://i.pinimg.com/originals/47/a6/35/47a635c80c67a7ecfd58b6e3bf4a61f8.jpg" },
+            { name: "Product 3", description: "This is a description for product 3.", price: 19.99, imageUrl: "https://dl-cf.splento.com/cdn/2020/07/03/restaurant_product_photography_san_diego_1.jpg" },
+            { name: "Product 4", description: "This is a description for product 4.", price: 89.99, imageUrl: "https://th.bing.com/th/id/OIP.05cNalb5Zv36b4BQtPe2bgHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3" },
+            { name: "Product 5", description: "This is a description for product 5.", price: 129.99, imageUrl: "https://th.bing.com/th/id/OIP.ilw4v7P_V6DLf-SQXQZWcwHaE8?pid=ImgDet&w=184&h=122&c=7&dpr=1.3" },
+            { name: "Product 6", description: "This is a description for product 6.", price: 75.99, imageUrl: "https://th.bing.com/th/id/OIP.lnpoeqibQ9ziktDvZqdHUgHaGe?pid=ImgDet&w=184&h=161&c=7&dpr=1.3" },
+            { name: "Product 7", description: "This is a description for product 7.", price: 39.99, imageUrl: "https://th.bing.com/th/id/OIP.OOnNidFA3K4v5M_78IUjUgAAAA?pid=ImgDet&w=184&h=137&c=7&dpr=1.3" },
+            { name: "Product 8", description: "This is a description for product 8.", price: 55.99, imageUrl: "https://tse1.explicit.bing.net/th/id/OIP.-3KC5bn_g0DB9PMFb2CCKwAAAA?pid=ImgDet&w=184&h=132&c=7&dpr=1.3&isAdult=true" },
+            { name: "Product 9", description: "This is a description for product 9.", price: 99.99, imageUrl: "https://th.bing.com/th/id/OIP.QsNvnFkjXLQnOeTr6rD8-gHaE8?pid=ImgDet&w=184&h=122&c=7&dpr=1.3" }
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const productIndex = params.get('index');
+        const product = products[productIndex];
+
+        if (product) {
+            document.getElementById("product-detail").innerHTML = `
+                <div class="card">
+                    <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text">${product.description}</p>
+                        <p class="card-text"><strong>Price:</strong> $${product.price.toFixed(2)}</p>
+                        <a href="index.html" class="btn btn-primary">Back to Products</a>
+                    </div>
+                </div>
+            `;
+        } else {
+            document.getElementById("product-detail").innerHTML = "<p>Product not found.</p>";
+        }
+    </script>
+</body>
+</html>
