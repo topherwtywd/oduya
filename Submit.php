@@ -2,7 +2,7 @@ Submit.php
 <?php 
 include('db.php');
 
-$con = Createdb();
+$con =  indexhtml();
 
 if ($con) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
