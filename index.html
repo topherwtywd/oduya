@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike.com</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #070707;
+            background-image: url('https://godmeetsfashion.com/wp-content/uploads/2019/09/ps-paul-smith-converse-all-star-100-hi-release-20191005-01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(14, 36, 59, 0.9);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Adjust for smaller screens */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Buttons */
+        button, .price {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        button:hover, .price:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 123, 255, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 600;
+        }
+
+        /* Product Section */
+        .product-section {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.6); /* Transparent black */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff; /* Ensure text is readable against a dark background */
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.8); /* Transparent white */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* Three cards per row */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: #333; /* Darker text for contrast against the white card */
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #555; /* Medium gray for better readability */
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .product-card {
+                width: calc(50% - 20px); /* Two cards per row */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: 100%; /* Full width on small screens */
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(14, 36, 59, 0.8);
+            color: #fff;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#" class="logo">Nike shoeweb</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="create.php">Add Product</a></li>
+            <li><a href="read.php">View Products</a></li>
+        </ul>
+    </nav>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <h1>Featured Products</h1>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD3Yzar07UakYVqP3BNA1KaK1iiaBxXxx5ug&s" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>A high-quality product for your daily needs.</p>
+                <div class="price">$19.99</div>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROmw2cDXYtIj0hBzHk6ltIm8WMoTIsZStB6ZECIX8pXvCGA1MCDn9auq5fNkrmo1hIz_w&usqp=CAU" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Experience the best with this premium item.</p>
+                <div class="price">$29.99</div>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6RBRlF-Wx0RdzplgkzKQY3cH0XFN_SfpKCQ&s" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>A high-quality product for your daily needs.</p>
+                <div class="price">$19.99</div>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQujRgjMmwJ0Ax1CyW5AFztKbTZEa_NYkmnbg&s" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Experience the best with this premium item.</p>
+                <div class="price">$29.99</div>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ULIfjLfQmNNWhGJBosPoX8ZORWDNyFEhYw&s" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>A high-quality product for your daily needs.</p>
+                <div class="price">$19.99</div>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrR-VvyptK9VPQIMJfvljkv7oYIaNS2WwctRWBEQLaaYJSdBMYso_1EFFIy3_3NPXzQY&usqp=CAU" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Experience the best with this premium item.</p>
+                <div class="price">$29.99</div>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+</html>
